@@ -31,7 +31,7 @@
 using namespace Microsoft::WRL;
 
 const D2D1_COLOR_F TextRenderer::clearColor_ = {0.0f, 0.0f, 0.0f, 0.0f};
-const D2D1_COLOR_F TextRenderer::fpsBackgroundColor_ = {0.0f, 0.0f, 0.0f, 0.8f};
+const D2D1_COLOR_F TextRenderer::fpsBackgroundColor_ = {0.0f, 0.0f, 0.0f, 0.0f};
 const D2D1_COLOR_F TextRenderer::msBackgroundColor_ = {0.0f, 0.0f, 0.0f, 0.7f};
 const D2D1_COLOR_F TextRenderer::messageBackgroundColor_ = {0.0f, 0.0f, 0.0f, 0.5f};
 const D2D1_COLOR_F TextRenderer::fontColor_ = {1.0f, 1.0f, 1.0f, 1.0f};
