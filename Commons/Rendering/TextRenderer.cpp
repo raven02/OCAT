@@ -85,7 +85,7 @@ TextRenderer::~TextRenderer()
 
 void TextRenderer::CalcSize(int screenWidth, int screenHeight)
 {
-  fullWidth_ = 64;
+  fullWidth_ = 256;
   fullHeight_ = lineHeight_ * 4;
 
   Resize(screenWidth, screenHeight);
