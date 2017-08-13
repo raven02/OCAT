@@ -85,7 +85,7 @@ TextRenderer::~TextRenderer()
 
 void TextRenderer::CalcSize(int screenWidth, int screenHeight)
 {
-  fullWidth_ = 256;
+  fullWidth_ = 128;
   fullHeight_ = lineHeight_ * 4;
 
   Resize(screenWidth, screenHeight);
@@ -152,19 +152,9 @@ void TextRenderer::DrawFrameInfo(const GameOverlay::PerformanceCounter::FrameInf
   renderTarget_->PushAxisAlignedClip(fpsArea_, D2D1_ANTIALIAS_MODE_ALIASED);
   renderTarget_->Clear(fpsBackgroundColor_);
 
-  fpsMessage_->WriteMessage(frameInfo.fps, L" FPS");
+  fpsMessage_->WriteMessage(frameInfo.fps, L"");
   fpsMessage_->SetText(writeFactory_.Get(), textFormat_.Get());
   fpsMessage_->Draw(renderTarget_.Get());
-
-  renderTarget_->PopAxisAlignedClip();
-
-  // ms counter
-  renderTarget_->PushAxisAlignedClip(msArea_, D2D1_ANTIALIAS_MODE_ALIASED);
-  renderTarget_->Clear(msBackgroundColor_);
-
-  msMessage_->WriteMessage(frameInfo.ms, L" ms", precision_);
-  msMessage_->SetText(writeFactory_.Get(), textFormat_.Get());
-  msMessage_->Draw(renderTarget_.Get());
 
   renderTarget_->PopAxisAlignedClip();
 }
